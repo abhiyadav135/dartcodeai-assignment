@@ -12,7 +12,7 @@ Please be candid. This helps us understand fit and where you’d like support.
 - **Coverage**: Manual verification was prioritized; unit tests are minimal.
 
 ## What you did not finish (and why)
-- **Automated Regression Tests**: Timeboxed to 4 hours; focused on core functionality and design documentation instead.
+- **Automated Regression Tests**: focused on core functionality and design documentation instead.
 
 ## If you had one more day, what would you improve first?
 - **Local Inference Fallback**: Implement a local model (ONNX) to ensure 100% availability during network outages.

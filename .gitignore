@@ -1,5 +1,6 @@
 # Secrets
 .env
+dart-sdk/
 
 # Dart
 .dart_tool/
