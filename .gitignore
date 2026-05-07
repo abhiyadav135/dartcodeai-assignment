@@ -1,0 +1,21 @@
+# Secrets
+.env
+
+# Dart
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db
