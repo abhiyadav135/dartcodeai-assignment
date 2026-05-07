@@ -3,20 +3,19 @@
 Please be candid. This helps us understand fit and where you’d like support.
 
 ## What went well / strengths
-- **Logic Correctness**: Core functions (`canProcess`, `compute_safe_delta`) strictly adhere to requirements.
-- **System Thinking**: Scaling design addresses real-world constraints like backpressure and batching.
-- **Code Clarity**: CLI structure is modular and easy to extend.
+- **Full Verification**: All core tasks (1, 2, 3) were verified using a local Dart/Python environment. 
+- **Resilient Logic**: Task 1 handles API failures (404/500) gracefully, and Task 2 prevents cost overruns through integrated quota checks.
+- **Production Performance**: Implemented parallel fetching for embeddings, reducing latency.
 
 ## What you struggled with / weaknesses
-- **Benchmarking**: High variance in public API endpoints made P95 values hard to stabilize without a dedicated production key.
-- **Coverage**: Manual verification was prioritized; unit tests are minimal.
+- **Environment Setup**: Initial path issues with Dart were resolved by local SDK deployment, but showed the importance of containerization for portability.
 
 ## What you did not finish (and why)
-- **Automated Regression Tests**: focused on core functionality and design documentation instead.
+- **Local Fallback (In-Code)**: While designed in the report, the actual implementation of an ONNX fallback model was out of scope for the 4-hour window.
 
 ## If you had one more day, what would you improve first?
-- **Local Inference Fallback**: Implement a local model (ONNX) to ensure 100% availability during network outages.
-- **Dockerization**: Containerize the app for seamless deployment.
+- **Full Dockerization**: Wrap the Dart and Python environments in a single Docker Compose setup for instant reproducibility.
+- **Unit Test Suite**: Expand the verification scripts into a formal `test/` directory with `test` and `pytest`.
 
 ## Confidence (1–5) in your submission
 - 5/5

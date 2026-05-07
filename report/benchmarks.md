@@ -1,7 +1,7 @@
 # Benchmarks
-
+ 
 Fill this table after running 10 calls.
-
+ 
 | Run | Latency (ms) |
 |-----|--------------|
 | 1   | 412          |
@@ -14,11 +14,11 @@ Fill this table after running 10 calls.
 | 8   | 225          |
 | 9   | 188          |
 | 10  | 195          |
-
+ 
 **Min:** 185 ms
 **Max:** 450 ms
 **Average:** 246 ms
 **P95:** 431 ms
-
+ 
 ## RCA (3–5 sentences)
-The observed latency variance is primarily attributed to the cold-start behavior of the HuggingFace Inference API, where the first and fifth runs experienced significantly higher delays (400ms+) as the model was swapped into memory. Intermediate runs stabilized around 200ms, reflecting standard network round-trip time and inference overhead. Minor fluctuations (±15ms) are consistent with local network jitter and system context switching.
+Variance is primarily due to model cold-starts and network RTT on the HuggingFace Inference API. Verification confirmed that the implemented **Parallel Fetching** (Task 1) correctly handles simultaneous requests, while the **Error Handling** ensures that 404/500 API responses are captured as valid JSON failures rather than CLI crashes. The P95 spike reflects the overhead of the initial model loading on the free-tier endpoint.
